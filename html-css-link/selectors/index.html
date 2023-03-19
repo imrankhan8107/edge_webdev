@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- we can use multiple classes on same element or one class on multiple elements -->
+    <!-- id only belongs to a single element, we cannot provide multiple ids to one elements -->
+    <!-- one id cannot be repeated for multiple elements -->
+    <p class="right small">para one</p>
+    <p  id="two" class="small">para two</p>   <!-- red applied bcoz of id and small fontsize bcoz of class-->
+    <p class="right">para three</p>
+    <!-- if we try to use single id in multiple elements, css works but js doen't work -->
+    <!-- eg. if we have 2 elements with same id and if we try to get element by id using js, we will only get the first element with the specified id -->
+    <!-- id>class>selectors =>precedence in which styles are applied -->
+    <p>para four</p>
+    <p class="right">para five</p>
+
+    <p class="c1 c2">para six</p>
+    <p class="c2 c1">para seven</p>
+
+    <div class="outer">
+        <p class="inner">
+            inner para in outer div
+        </p>
+    </div>
+
+    <!-- if we use inner class independently same styling won't be applied as above outer-inner combination -->
+    <p class="inner">
+        inner para in outer div
+    </p>
+
+    <!-- it below class outer-inner styling still holds, so inner need not to be direct child of outer but can be 2nd or 3rd child -->
+    <!-- in case of outer>inner the styling doesn't hold with middle in between. outer>inner means inner needs to be direct/child descendant, not other element must be present-->
+    <div class="outer">
+        <div class="middle">
+            <p class="inner">
+                inner para in outer div
+            </p>
+        </div>
+    </div>
+    
+    <!-- div+p styling gets applied to contents of p if p elements if present after div => it is adjacent sibling-->
+    <div>division</div>
+    <p>this is para after div</p>
+    <i>italic</i>
+    <b>bold</b>
+    <input>
+    <p>
+        yet another para
+    </p>
+<!-- general sibling styling also gets applied to p elements not directly present after div
+p elements after 5-6 elements after div=> in such case as well general sibling styling is also applied -->
+</body>
+</html>

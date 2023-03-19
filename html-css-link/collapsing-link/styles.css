@@ -1,0 +1,19 @@
+/* li inside li is made height 0 and its visibility is made hidden */
+li li{
+    height: 0;
+    visibility: hidden;
+}
+
+/* li which is one level beneath current li is made visible*/
+li:hover>*>li{
+    height: auto;
+    visibility: visible;
+}
+
+* {
+    color:blue;
+}
+
+div{
+     font-size: 32pt;
+}

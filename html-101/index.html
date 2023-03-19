@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Heading</h1>
+    <h2>Heading</h2>
+    <h3>Heading</h3>
+    <h4>Heading</h4>
+    <h5>Heading</h5>
+    <h6>Heading</h6>
+    this is some normal text
+    <p>this is a paragraph</p>
+    <div>this is a div</div>
+    <span>this is a span</span>
+
+    This is <b>bold</b> text
+    <br>
+    This is <i>italic</i>
+    <br>
+    This is <u>underlined</u>
+    <br>
+
+    <abbr title="JavaScript">JS</abbr>  <!-- Creates an abbreviation -->
+
+    <h3>Lists</h3>
+
+    <ol>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ol>
+    
+    <ul>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ul>
+
+    <ol type="A">
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ol>
+
+    <ol type="i">
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ol>
+
+    <ul type="circle">
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ul>
+
+    <ul type="square">
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+        <li>abcd</li>
+    </ul>
+
+    <!-- list nesting -->
+    <h4>Nested list</h4>
+    <ol>
+        <li>one
+            <ol type="a">
+                <li>one.one</li>
+                <li>one.two</li>
+            </ol>
+        </li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <!-- Above elements were for outputs -->
+    <!-- Form elements are used to take input from user -->
+    <h1>Form elements</h1>
+
+    <form>
+        <input>
+        <input type="password">
+        <input type="email" placeholder="something@gmail.com">
+        <input type="number" min="100" max="200">
+        <input type="date">
+        <input type="color">
+
+        <br>
+
+        <input type="checkbox" > A <br>
+        <input type="checkbox" > B <br>
+        <input type="checkbox" > C <br>
+
+        <!-- If we don't specify name, we can select all the radio inputs,
+             but as we specify same name,
+             all the radio inputs gets grouped together and,
+              we can now select only one among all the radio inputs-->
+        <input type="radio" name="subject"> A <br>
+        <input type="radio" name="subject"> B <br>
+        <input type="radio" name="subject"> C <br>
+
+        <input type="radio" name="fruit"> Apple <br>
+        <input type="radio" name="fruit"> Banana <br>
+        <input type="radio" name="fruit"> Chiku <br>
+
+    </form>
+
+    <!-- Anything we write in this input field, 
+    It gets appended to the url and then the query goes -->
+    <h1>Google search</h1>
+    <form action="https://google.com/search" method="GET">
+        <input name="q" placeholder="search query">
+        <button type="submit">Search</button>
+    </form>
+    
+    
+    
+</body>
+</html>

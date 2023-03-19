@@ -1,0 +1,42 @@
+.right {
+    text-align: right;
+}
+
+#two{
+    color: red;
+}
+
+.small{
+    font-size: 7pt;
+}
+
+.c1{
+    color: red;
+}
+
+
+.c2{
+    color: blue;
+}
+
+/* below styling only gets applied when an element with class inner is presnt within an element with class outer
+if class are present individually then styling won't be applied*/
+/* descendant combinator */
+.outer  .inner {
+    background-color: aqua;
+}
+
+/* child combinator */
+.outer > .inner {
+    background-color: aqua;
+}
+
+/* Adjacent sibling */
+div+p{
+    color:green;
+}
+
+/* General sibling */
+div~p{
+    font-weight: bold;
+}
