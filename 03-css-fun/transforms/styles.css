@@ -1,0 +1,37 @@
+div {
+    height:50px;
+    width: 50px;
+    margin: 30px;
+    background-color: midnightblue;
+}
+
+#two {
+    transform: translateY(30px) translateX(-20px);
+}
+
+#four{
+    transform: rotate(45deg);
+}
+
+#six {
+    transform:skew(10deg);
+}
+
+#eight{
+    transform: scale(2);
+}
+
+#ten{
+    box-shadow:2px 2px 2px black;
+}
+
+#ten:hover{
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: 5px 5px 2px black;
+    transition-duration: 1s;
+}
+
+#ten:active{
+    transform: translateX(5px) translateY(5px);
+    box-shadow: 0px 0px 0px;
+}
