@@ -1,0 +1,14 @@
+/* li inside li is made height 0 and its visibility is made hidden */
+/* li elements which are descendants of  other li elements, hide them */
+li li{
+    height: 0;
+    visibility: hidden;
+}
+
+/* li which is one level beneath current li is made visible*/
+/* pseudo selectors => hover,active,focus,etc. */
+/* if an element is hovered; whatever inside that is maybe ol,ul,etc.  if they have an li directly then display them */
+li:hover >*>li{
+    height: auto;
+    visibility: visible;
+}

@@ -21,22 +21,23 @@
 
 /* below styling only gets applied when an element with class inner is presnt within an element with class outer
 if class are present individually then styling won't be applied*/
-/* descendant combinator */
+/* descendant combinator =>( .A .B => B is a descendant of A) */
 .outer  .inner {
     background-color: aqua;
 }
 
-/* child combinator */
-.outer > .inner {
+/* child combinator =>( .A>.B => B directly child of A) */
+.outer > .inner  {
     background-color: aqua;
 }
 
-/* Adjacent sibling */
+/* Adjacent sibling =>( div+p => p directly after div)*/
 div+p{
     color:green;
 }
 
-/* General sibling */
+/* General sibling =>( A~B => all B after A)*/
 div~p{
-    font-weight: bold;
+    /* font-weight: bold; */
+    color:red;
 }
