@@ -1,0 +1,81 @@
+div {
+    height: 70px;
+    width: 70px;
+    margin: 30px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    font-size: 30pt;
+    transition:2s;
+}
+
+div:nth-child(1){
+    transform: rotate(45deg);
+}
+/* rotate is generally done according to Z axis
+if we rotate along X or Y axis the rotaion happens when one side come out and its opposite goes in
+for X or Y axis, the object is rotated in 3d and as we see in 2d, we get a projection of the rotated object
+*/
+div:nth-child(2){
+    transform: rotateX(45deg);
+}
+
+div:nth-child(3){
+    transform: rotateY(45deg);
+}
+
+div:nth-child(4){
+    transform: scaleX(2) scaleY(0.5);
+}
+
+div:nth-child(5){
+    transform: scaleX(0.67);
+}
+/* 5th child and 3rd child appears similar but they are different
+5th child is actually get shrink along X axis
+3rd child is rotated along Y axis
+*/
+
+div:nth-child(6){
+    transform: skewX(10deg);
+}
+
+/* transformations are applied postrendering 
+after the positions,margins to be left,etc. are decided for all elements, then the transforms are applied
+hence if we transform first element, it won't affect the other elements
+we can change the height of the div using property, and according to it other elements will move on the page
+but if we use transforms, other elements won't be affected
+*/
+
+div:nth-child(7):hover{
+    transform: rotateZ(360deg);
+}
+
+div:nth-child(8):hover{
+    transform: translateX(100px);
+}
+
+div:nth-child(9):hover{
+    margin-left: 130px;
+}
+/* div 9 gets stuck at the mouse, bcoz it goes out of hover
+margins when are applied, it affects what the position of item is
+when we go to 9th div, hover gets applied; when box reaches where mouse is, if it try to get out of the part, then it looses the hover
+this is bcoz actual position of 9 is changing, so if 9 try to go anymore to right, it doesn't have hover anymore hence it will try to get back 
+so its fighting at this point of moving out or in based on whether it is in hover or not
+
+transforms are applied post rendering
+for div 8, it seems like our box is moving from its position but originally the box will remain at the same position
+it only visibly changes the position when we apply the transform, our mouse is still at hover position, this is bcoz actual position of box isn't changing
+*/ 
+/* 
+if we translateY, other items won't be affected
+but if we use margin-top on hover, the below items also needs to be animated along with 9th i.e., the rest of the page also shifts
+
+transforms are cheaper as they are applied after rendering
+margin transforms are costlier as they requires as they need recalculation 
+ */
+
+
+
+
