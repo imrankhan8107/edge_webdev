@@ -56,7 +56,7 @@ div:nth-child(8):hover{
 }
 
 div:nth-child(9):hover{
-    margin-left: 130px;
+    margin-top: 130px;
 }
 /* div 9 gets stuck at the mouse, bcoz it goes out of hover
 margins when are applied, it affects what the position of item is
