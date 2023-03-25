@@ -76,6 +76,38 @@ transforms are cheaper as they are applied after rendering
 margin transforms are costlier as they requires as they need recalculation 
  */
 
+div:nth-child(10):hover{
+    transform: rotateZ(360deg) translateX(200px);  /* while rotating, translate => primarily rotate and along with it translate=> hence we got a spiral motion bcoz actual motion is rotation and translation is super imposed on that */
+}
 
+div:nth-child(11):hover{
+    transform: translateX(200px) rotateZ(360deg);  /* while translating, rotate => primarily translate and along with it rotate => hence we got a wheel like motion bcoz actual motion is translation and rotation is super imposed on that*/
+}
+
+/* continuous loops */
+div:nth-child(12){
+    animation-name: wheel;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+/* keyframes object helps us define different state of animations based on % animation done */
+@keyframes wheel {
+    /* 0% original state */
+    0% {
+
+    }
+    25%{
+        transform: scale(2) rotate(180deg);
+    }
+    /* at 50%, it must be go right while rotating  */
+    50% {
+        transform: translateX(100px) rotateZ(360deg);
+    }
+    75%{
+        transform: scale(0.5) rotate(180deg);
+    }
+    /* 100% original state */
+    100% {}
+}
 
 
