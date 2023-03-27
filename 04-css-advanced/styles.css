@@ -99,7 +99,7 @@ div:nth-child(12){
     25%{
         transform: scale(2) rotate(180deg);
     }
-    /* at 50%, it must be go right while rotating  */
+    /* at 50%, it must be go right while rotating   */
     50% {
         transform: translateX(100px) rotateZ(360deg);
     }

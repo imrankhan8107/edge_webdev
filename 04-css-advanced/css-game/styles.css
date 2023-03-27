@@ -1,0 +1,79 @@
+div{
+    display:inline-block;
+    animation-iteration-count: infinite;
+    position:absolute;
+}
+
+#background{
+    height: 400px;
+    width: 700px;
+    background-color: aqua;
+}
+
+#bot1 {
+    height:40px;
+    width: 40px;
+    background-color: red;
+    animation-name: botmoves;
+    animation-duration: 3.5s;
+    position: relative;
+    left: 20%;
+}
+
+#bot2 {
+    height:40px;
+    width: 40px;
+    background-color: red;
+    animation-name: botmoves;
+    animation-duration: 2s;
+    position: relative;
+    left:40%;
+}
+
+#bot3 {
+    height:40px;
+    width: 40px;
+    background-color: red;
+    animation-name: botmoves;
+    animation-duration: 1.3s;
+    position: relative;
+    left: 60%;
+}
+
+#player{
+    height: 40px;
+    width: 40px;
+    background-color:blue;
+    position: relative;
+    bottom: -45%;
+    left: 0%;
+}
+
+@keyframes botmoves {
+    0%{
+
+    }
+    50%{
+        transform: translateY(360px);
+    }
+    100%{
+
+    }
+}
+
+#background:hover #player{
+    animation-name: playerAnimate;
+    animation-duration: 4s;
+}
+
+@keyframes playerAnimate {
+    0%{
+
+    }
+    50%{
+        transform: translateX(660px) ;
+    }
+    100%{
+
+    }
+}
