@@ -48,18 +48,6 @@ function drawBox(box){
 }
 
 
-function drawImg() {
-    // const ctx = document.getElementById("canvas").getContext("2d");
-    const img = new Image();
-    img.onload = () => {
-      for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 3; j++) {
-          context.drawImage(img, j * 50, i * 38, 50, 38);
-        }
-      }
-    };
-    img.src = "mario.jpg";
-}
 
 function collisin(box1,box2){
     return box1.x < box2.x + box2.w &&
@@ -128,7 +116,6 @@ function updateGame(){
     context.clearRect(0, 0, canvas.width, canvas.height);
     // draw the player
     drawBox(player);
-    drawImg();
     drawBox(goal);
 
     // draw the enemy
