@@ -1,0 +1,46 @@
+.right-pane {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  background-color: #1e3453;
+  color: #fff;
+}
+
+.rp-up {
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+span {
+  display: inline-flexbox;
+}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.country {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ccc;
+  margin: 0;
+}
+
+.time {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.rp-icon {
+  height: 35px;
+  width: 50px;
+}
+
+.rp-up-lower {
+  display: flex;
+  justify-content: space-between;
+}

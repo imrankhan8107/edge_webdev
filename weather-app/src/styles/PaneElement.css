@@ -1,0 +1,7 @@
+.pane-element {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px;
+  border-style: solid;
+  border-radius: 1rem;
+}

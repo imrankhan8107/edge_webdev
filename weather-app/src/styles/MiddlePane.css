@@ -1,0 +1,35 @@
+.middle-pane {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  justify-content: start;
+  background-color: white;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  display: inline-block;
+  border-radius: 1rem;
+  width: 18rem;
+}
+.icon {
+  display: inline-block;
+  color: blue;
+}
+
+span {
+  display: inline-block;
+  padding: 1rem;
+}
+
+h2,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  display: inline-block;
+}

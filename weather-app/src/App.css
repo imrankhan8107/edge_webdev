@@ -1,0 +1,7 @@
+.App {
+  margin: 2rem;
+  background-color: cyan;
+  display: flex;
+  align-items: flex-start;
+  height: 40rem;
+}

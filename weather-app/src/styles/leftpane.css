@@ -1,0 +1,12 @@
+.left-pane {
+  /* margin: 0.5rem; */
+  width: 20%;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #eef2f3;
+  height: 100%;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
