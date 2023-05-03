@@ -12,7 +12,6 @@ export default function NavBar({ setInputValue, inputValue, search, setPage }) {
 
       <input
         onChange={(e) => {
-          //inputValue = e.target.value;   //wrong, won't trigger a rerender
           setInputValue(e.target.value);
         }}
         onKeyDown={(e) => {
