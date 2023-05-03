@@ -1,17 +1,13 @@
 .movie-details {
   padding: 4rem;
-  display: inline-flexbox;
-  /* flex-wrap: wrap; */
-  justify-content: space-around;
-  /* align-items: flex; */
-  /* max-width: 1000px; */
+
   margin: 0 auto;
   padding: 20px;
 }
 
 .poster {
   width: 300px;
-  height: 450px;
+  height: 500px;
   object-fit: cover;
   margin-right: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -26,6 +22,39 @@
 .actors {
   font-size: 24px;
   margin-bottom: 10px;
+}
+
+.highP {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+
+.highP h1 {
+  padding-bottom: 1rem;
+}
+
+.midP {
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.midP h2{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.midP h3 {
+  font-size: 1.35rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.midP p {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
 }
 
 .details-loading {

@@ -13,7 +13,7 @@ export default function MovieDetails() {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       let response = await axios.get(
-        `http://www.omdbapi.com/?i=${id}&apikey=9774ffe`
+        `https://www.omdbapi.com/?i=${id}&apikey=9774ffe`
       );
       console.log(response.data);
       setmovieDetails(response.data);
@@ -37,15 +37,31 @@ export default function MovieDetails() {
             alt={movieDetails.Title}
             className="poster"
           />
-          <h1 className="title">{movieDetails.Title}</h1>
+          <div>
+            <h1 className="title">
+              {movieDetails.Title} ({movieDetails.Year}){" "}
+            </h1>
+            <p className="actors">Actors: {movieDetails.Actors}</p>
+          </div>
         </div>
-        <div>
-
+        <div className="midP">
+          <h2>IMDB Ratings: {movieDetails.imdbRating}</h2>
+          <h3>Story: {movieDetails.Plot}</h3>
+          <p className="awards">Awards: {movieDetails.Awards}</p>
+          <p className="release-date">Release Date: {movieDetails.Released}</p>
+          <p className="show-type">Type: {movieDetails.Type}</p>
+          {movieDetails.Type === "series" ? (
+            <p>Total Seasons: {movieDetails.totalSeasons}</p>
+          ) : null}
+          {movieDetails.Ratings.map((rating) => {
+            return (
+              <p>
+                {rating.Source} : {rating.Value}
+              </p>
+            );
+          })}
+          <p>Written By: {movieDetails.Writer}</p>
         </div>
-        <p className="actors">Actors: {movieDetails.Actors}</p>
-        <p className="awards">Awards: {movieDetails.Awards}</p>
-        <p className="release-date">Release Date: {movieDetails.Released}</p>
-        <p className="show-type">Type: {movieDetails.Type}</p>
       </div>
     );
   } else {

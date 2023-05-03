@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/NavBar.css";
 import { Link } from "react-router-dom";
 
-export default function NavBar({ setInputValue, inputValue, search }) {
+export default function NavBar({ setInputValue, inputValue, search, setPage }) {
   console.log(inputValue);
   return (
     <div className="navbar">
@@ -15,7 +15,10 @@ export default function NavBar({ setInputValue, inputValue, search }) {
           //inputValue = e.target.value;   //wrong, won't trigger a rerender
           setInputValue(e.target.value);
         }}
-        onKeyDown={search}
+        onKeyDown={(e) => {
+          setPage(1);
+          search(e);
+        }}
         value={inputValue}
         placeholder="Search..."
         className="search-bar"

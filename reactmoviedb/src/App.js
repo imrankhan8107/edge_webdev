@@ -29,7 +29,6 @@ function App() {
   const [page, setPage] = useState(1);
 
   const search = async (e) => {
-    console.log(e);
     if ((e.code === "Enter" || e.type === "click") && inputValue !== "") {
       if (inputValue.length < 3) {
         alert("Please enter atleast 3 characters");
@@ -51,11 +50,9 @@ function App() {
         setisLoading(false);
         console.log(response.data, "<- this is our data from api");
         // Set data
-        if(response.data.Search){
+        if (response.data.Search) {
           setMovies(response.data.Search);
         }
-        // setMovies(response.data.Search);
-        // console.log(page);
       }
     }
   };
@@ -71,6 +68,7 @@ function App() {
                   search={search}
                   setInputValue={setInputValue}
                   inputValue={inputValue}
+                  setPage={setPage}
                 />
                 <Movie
                   isLoading={isLoading}
@@ -91,8 +89,7 @@ function App() {
                 search={search}
                 setInputValue={setInputValue}
                 inputValue={inputValue}
-                Movies={Movies}
-                setMovies={setMovies}
+                setPage={setPage}
               />
             }
           />
