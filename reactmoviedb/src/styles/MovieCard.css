@@ -1,7 +1,7 @@
 .movie-card {
   padding: 2rem;
   padding-bottom: 0;
-  margin: 1rem;
+  /* margin: 1rem; */
   margin-bottom: 0;
   width: 15rem;
   height: 30rem;
@@ -9,13 +9,27 @@
   border-radius: 2%;
 }
 
+.movie-card:hover {
+  background-color: #34475c;
+}
+
+.card-button {
+  background: none;
+  padding: none;
+  margin: 1rem;
+  /* border: none; */
+  border-radius: 1rem;
+}
+
 .movie-title {
+  margin: 0.2rem;
   font-size: 1rem;
   font-weight: bold;
+  color: #eee;
 }
 
 .movie-year {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  color: #9b9b9b;
+  color: grey;
 }

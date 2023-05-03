@@ -8,15 +8,30 @@ export default function MovieList({
   page,
   setPage,
   search,
+  API_BASE_URL,
 }) {
   if (isLoading) {
-    return <h1 className="loading">Loading Movies, Please wait...</h1>;
+    return (
+      <div className="loading">
+        <h1>Loading Movies, Please wait...</h1>
+      </div>
+    );
+  } else if (isLoading || movieList.length === 0) {
+    return <h1 className="loading">Search movies</h1>;
   } else {
     return (
       <>
         <div className="movie-list">
           {movieList.map((movie) => {
-            return <MovieCard key={movie.imdbID} movie={movie} />;
+            return (
+              <MovieCard
+                key={movie.imdbID}
+                movie={movie}
+                API_BASE_URL={API_BASE_URL}
+                // getMovieDetails={getMovieDetails}
+                // setShow={setShow}
+              />
+            );
           })}
         </div>
 
@@ -25,10 +40,11 @@ export default function MovieList({
             <>
               <input
                 onClickCapture={(e) => {
-                  setPage(page - 1);
+                  if (page > 1) {
+                    setPage(page - 1);
+                  }
                 }}
                 onClick={(e) => {
-                  // setPage(page - 1);
                   search(e);
                 }}
                 value="Previous"
@@ -40,7 +56,6 @@ export default function MovieList({
                   setPage(page + 1);
                 }}
                 onClick={(e) => {
-                  // setPage(page + 1);
                   search(e);
                 }}
                 value="Next"

@@ -1,0 +1,46 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.home-input {
+  width: 50vw;
+  background-color: #3b3b4f;
+  color: cyan;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  margin: 20px;
+}
+
+.move-movie-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 20vw;
+  background-color: #cdcdcd;
+}
+
+.move-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 10vw;
+  background-color: #cdcdcd;
+}

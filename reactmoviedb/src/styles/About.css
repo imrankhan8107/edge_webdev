@@ -1,0 +1,17 @@
+.about-page {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height: 100vh;
+  flex-direction: column;
+}
+
+.heading {
+  padding: 1rem;
+}
+
+.webInfo {
+  padding: 1rem;
+}

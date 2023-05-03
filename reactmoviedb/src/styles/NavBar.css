@@ -7,9 +7,17 @@
 }
 
 .search-bar {
-  outline: none;
-  border: none;
-  background: none;
-  background-color: #1b2634;
+  width: 30vw;
+  background-color: #3b3b4f;
+  color: cyan;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.heading {
   color: #eee;
+  font-size: 1.5rem;
 }
