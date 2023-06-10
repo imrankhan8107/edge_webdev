@@ -29,13 +29,27 @@ function checkForKey(req, res, next) {
   }
 }
 
-// decodeQuery happens then the function call happens 
-app.get("/public", decodeQuery, (req, res) => {
+// // decodeQuery happens then the function call happens
+// app.get("/public", decodeQuery, (req, res) => {
+//   res.send("Hello " + req.query.name);
+// });
+
+// // decodeQuery happens then checkForKey happens then function call happens
+// app.get("/private", decodeQuery, checkForKey, (req, res) => {
+//   res.send("Hello " + req.query.name + ", welcome to the sea");
+// });
+
+// instead of specifying a middleware function for each route, we can specify a middleware function for all routes
+app.use(decodeQuery); // decodeQuery happens for all routes
+
+// Also order matters bcoz the middleware functions are executed in the order they are specified
+// order in which we add the middleware is the order in which middleware stack is created
+
+app.get("/public", (req, res) => {
   res.send("Hello " + req.query.name);
 });
 
-// decodeQuery happens then checkForKey happens then function call happens
-app.get("/private", decodeQuery, checkForKey, (req, res) => {
+app.get("/private", checkForKey, (req, res) => {
   res.send("Hello " + req.query.name + ", welcome to the sea");
 });
 
