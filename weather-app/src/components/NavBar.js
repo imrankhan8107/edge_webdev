@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { weatherContext } from "../App";
+import { BiCurrentLocation } from "react-icons/bi";
 import "../styles/NavBar.css";
 
-const d = new Date();
 const months = [
   "January",
   "February",
@@ -26,15 +27,39 @@ const days = [
   "Saturday",
 ];
 export default function NavBar() {
+  const { setCityName, getCityData, locateMe } = useContext(weatherContext);
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setTimeout(() => setTime(new Date()), 1000);
+    return () => clearTimeout(timer);
+  }, [time]);
   return (
     <div className="navbar">
-      <h1>
-        {months[d.getMonth()]} {d.getFullYear()}
-      </h1>
-      <h4>
-        {days[d.getDay()]}, {months[d.getMonth()].substring(0, 3)} {d.getDate()}
-        , {d.getFullYear()}
-      </h4>
+      <span className="navbar-content">
+        <div className="navbar-dates">
+          <h2>
+            {months[time.getMonth()]} {time.getFullYear()}
+          </h2>
+          <h4>
+            {days[time.getDay()]}, {months[time.getMonth()].substring(0, 3)}{" "}
+            {time.getDate()}, {time.getFullYear()}
+          </h4>
+        </div>
+        <input
+          placeholder="🔍 Search Location Here.."
+          className="city-input"
+          onChange={(e) => {
+            setCityName(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            getCityData(e);
+          }}
+        />
+
+        <button onClick={locateMe} className="locate">
+          <BiCurrentLocation className="locate-icon" />
+        </button>
+      </span>
     </div>
   );
 }

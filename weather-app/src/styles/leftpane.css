@@ -3,7 +3,8 @@
   width: 20%;
   display: inline-flex;
   flex-direction: column;
-  background-color: #eef2f3;
+  justify-content: space-evenly;  
+  background-color: lightgray;
   height: 100%;
 }
 

@@ -7,16 +7,22 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0.5rem;
+  margin-left: 2.5rem;
+  padding: 0.2rem;
   background-color: whitesmoke;
   display: inline-block;
   border-radius: 1rem;
-  width: 18rem;
+  width: 40%;
 }
-.icon {
+
+.card .icon {
+  padding: 0;
+  margin: 0;
   display: inline-block;
   color: blue;
+  height: 30px;
+  width: 30px;
 }
 
 span {
@@ -24,12 +30,17 @@ span {
   padding: 1rem;
 }
 
-h2,
+.card h2,
 h4 {
   margin: 0;
   padding: 0;
 }
 
-h5 {
+.card h5 {
   display: inline-block;
+}
+
+.graph {
+  height: 500px;
+  width: 100%;
 }

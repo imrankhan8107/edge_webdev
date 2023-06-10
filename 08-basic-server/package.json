@@ -1,0 +1,14 @@
+{
+  "name": "08-basic-server",
+  "version": "0.0.1",
+  "description": "This is a basic Http server in NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Imran",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
