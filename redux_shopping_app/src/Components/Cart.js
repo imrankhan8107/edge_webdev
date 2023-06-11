@@ -18,7 +18,7 @@ export default function Cart() {
           {cartItemsId.map((id) => {
             return (
               <div className="cart-item">
-                <div>
+                <div className="cart-item-details">
                   <span className="cart-item-title">{items[id].title}</span>
                   <span className="cart-item-price">{items[id].price} $</span>
                   <span className="cart-item-total">
@@ -38,16 +38,16 @@ export default function Cart() {
       <div className="cart" style={{ display: isOpen ? "block" : "none" }}>
         <div>
           <h1>Your Cart</h1>
+          <button
+            className="cart-button"
+            onClick={() => {
+              dispatch(toggleCart(!isOpen));
+            }}
+          >
+            Close Cart
+          </button>
         </div>
         {bodyUI()}
-        <button
-          className="cart-button"
-          onClick={() => {
-            dispatch(toggleCart(!isOpen));
-          }}
-        >
-          Exit
-        </button>
       </div>
     </>
   );

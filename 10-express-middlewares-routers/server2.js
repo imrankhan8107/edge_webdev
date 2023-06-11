@@ -40,7 +40,7 @@ function checkForKey(req, res, next) {
 // });
 
 // instead of specifying a middleware function for each route, we can specify a middleware function for all routes
-app.use(decodeQuery); // decodeQuery happens for all routes
+app.use(decodeQuery); // decodeQuery happens for all routes, defining global middleware => we don't need to specify it for each route
 
 // Also order matters bcoz the middleware functions are executed in the order they are specified
 // order in which we add the middleware is the order in which middleware stack is created

@@ -2,10 +2,9 @@
   padding: 1rem;
   margin: 0.5rem;
   border: 1px;
-  color: grey;
+  cursor: pointer;
 }
 
-.pane-element:hover {
+.active {
   color: blue;
-  cursor: pointer;
 }

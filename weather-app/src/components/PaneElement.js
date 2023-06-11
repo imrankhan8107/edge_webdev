@@ -1,14 +1,21 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { weatherContext } from "../App";
 import "../styles/PaneElement.css";
 
 export default function PaneElement({ icon, text, link }) {
+  const { currentTab, setcurrentTab } = useContext(weatherContext);
   return (
-    <div className="pane-element">
-      {/* <Link to={link}> */}
-      {icon}
-      {text}
-      {/* </Link> */}
-    </div>
+    <Link to={link}>
+      <div
+        className={`pane-element ${currentTab === text ? "active" : ""}`}
+        onClick={() => {
+          setcurrentTab(text === "Home" ? "" : text);
+        }}
+      >
+        {icon}
+        {text}
+      </div>
+    </Link>
   );
 }

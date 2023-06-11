@@ -3,11 +3,15 @@
   width: 20%;
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
   background-color: lightgray;
   height: 100%;
 }
 
 .icon {
   margin-right: 0.5rem;
+}
+
+.active {
+  color: blue;
 }
