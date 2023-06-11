@@ -10,6 +10,23 @@
   overflow: scroll;
 }
 
+.cart-heading {
+  display: inline-block;
+}
+
+.close-cart {
+  float: left;
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 900;
+  color: red;
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
 .cart-item-details {
   width: 70%;
 }

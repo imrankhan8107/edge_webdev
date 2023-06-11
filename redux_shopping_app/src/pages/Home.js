@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function Home() {
   return (
-    <div className='home'>
-      <h1>
-        This is HomePage
-      </h1>
+    <div className="home">
+      <h1>Welcome to Shopping Cart App made using React-redux</h1>
     </div>
-  )
+  );
 }
