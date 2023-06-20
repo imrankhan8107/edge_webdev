@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { weatherContext } from "../App";
-import { MidPaneCard, NavBar } from "../components";
+import { ForecastChart, MidPaneCard, NavBar } from "../components";
 import { WiCloudy, WiStrongWind, WiHumidity } from "react-icons/wi";
 import { MdWaves } from "react-icons/md";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
@@ -9,6 +9,13 @@ import "../styles/MiddlePane.css";
 export default function MiddlePane() {
   const { weatherData } = useContext(weatherContext);
   console.log(weatherData);
+  const data = [
+    { name: "Jan", value: 100 },
+    { name: "Feb", value: 200 },
+    { name: "Mar", value: 150 },
+    { name: "Apr", value: 300 },
+    { name: "May", value: 400 },
+  ];
   return (
     <div className="middle-pane">
       <NavBar />
@@ -42,6 +49,7 @@ export default function MiddlePane() {
         sub_value={"0,3"}
       />
       <hr />
+      <ForecastChart data={data} />
     </div>
   );
 }

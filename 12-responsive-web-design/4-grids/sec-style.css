@@ -1,0 +1,29 @@
+img{
+    max-width: 100%;
+}
+
+.grid-elements{
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #666;
+    position: relative;
+    background: grey;
+}
+
+.grid-elements span {
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.6);
+    color: red;
+    height: 80px;
+    width: 80px;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+}
+
+

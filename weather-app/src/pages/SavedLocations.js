@@ -5,7 +5,6 @@ export default function SavedLocations() {
     <div>
       <h1>Saved Locations</h1>
       <input type="text" placeholder="Search" />
-      
     </div>
   )
 }

@@ -4,6 +4,7 @@
   display: inline-block;
   justify-content: start;
   background-color: white;
+  overflow: scroll;
 }
 
 .card {

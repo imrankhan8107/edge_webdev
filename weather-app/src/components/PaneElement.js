@@ -10,7 +10,7 @@ export default function PaneElement({ icon, text, link }) {
       <div
         className={`pane-element ${currentTab === text ? "active" : ""}`}
         onClick={() => {
-          setcurrentTab(text === "Home" ? "" : text);
+          setcurrentTab(text);
         }}
       >
         {icon}

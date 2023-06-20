@@ -1,0 +1,127 @@
+@use "sass:map";
+@import "settings/font";
+@import "settings/colors";
+
+$breakpooints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+);
+
+div {
+  p {
+    color: $red;
+  }
+}
+
+.wrapper {
+  font-size: $font-large;
+  // using '&' to refer to the parent selector, by this we can have all thing related to a component in a single place
+  &:hover {
+    color: $primary;
+  }
+}
+// don't keep on nesting as it would generate long selectors
+// .wrapper {
+//   .inner-parent {
+//     .child {
+//       color: blue;
+//     }
+//   }
+// }
+
+// instead do this
+.wrapper {
+  .inner-parent {
+    color: $primary;
+  }
+  .child {
+    color: $primary;
+  }
+}
+
+// BEM -> BOX ELEMENT MODIFIER(class naming convention)
+.box {
+  height: 200px;
+  aspect-ratio: 1;
+  &__small-box {
+    height: 100px;
+    aspect-ratio: 1;
+    &--green {
+      background: $green;
+    }
+  }
+}
+// above code creates three class in actual css; box, box__small-box and box__small-box--green
+
+// Inheritance
+%button {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+.button-primary {
+  @extend %button;
+  background: blue;
+  color: white;
+}
+
+.button-secondary {
+  @extend %button;
+  border: 1px solid blue;
+  color: blue;
+}
+
+// Mixin
+@mixin apply_mediaquery($key) {
+  $size: map.get($breakpooints, $key);
+  @media screen and (max-width: $size) {
+    color: $red;
+  }
+}
+
+@mixin apply_mediaquery_1($key) {
+  $size: map.get($breakpooints, $key);
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.red {
+  color: cyan;
+  @include apply_mediaquery(small);
+}
+
+.heading {
+  font-weight: bold;
+  @include apply_mediaquery_1(medium) {
+    font-size: $font-large;
+    color: $primary;
+    font-weight: bolder;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  // width: 100%;
+  height: 300px;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 (100%/ (12 / $i));
+    height: 100px;
+    background-color: red;
+    border: 1px solid black;
+  }
+}
+
+// for the colors map, create a class for each key, with value as the color
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: $value;
+  }
+}

@@ -1,0 +1,89 @@
+body {
+  color: red;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.main {
+  font-size: 5rem;
+}
+
+.secondary {
+  font-size: 3rem;
+}
+
+/* 
+ @media (max-width: 500px) {
+  body {
+    color: blue;
+  }
+
+  .secondary {
+    font-size: 1rem;
+  }
+}
+//since body is below media query, there is no effect of mediaquery now. color is red no matter what the screen size is.
+body {
+  color: red;
+}
+*/
+
+/* @media (max-width: 500px) {
+  body {
+    color: blue !important;  // high specificity due to !important
+  }
+
+  .secondary {
+    font-size: 1rem;
+  }
+}
+
+body {
+  color: red;
+}
+} */
+/* Media query with widths */
+/* @media (max-width: 500px) {
+  body {
+    color: blue;
+  }
+
+  .secondary {
+    font-size: 1rem;
+  }
+} */
+
+/* media query with print */
+/* @media print {
+  body {
+    color: blue;
+} */
+
+/* mediaquery with orientation */
+/* @media (orientation: landscape) {
+  .main {
+    color:cyan
+  }
+} */
+
+/* 
+landscape: width>height
+portrait : height>width
+*/
+/* @media (orientation: landscape) and (max-height: 500px) {
+  .main {
+    color: cyan;
+  }
+} */
+
+/* ',' is used as 'or operator' */
+@media (orientation: landscape), (max-height: 500px) {
+  .main {
+    color: cyan;
+  }
+}
+
+/* If the same selector exists at multiple locations, selector closer to end of file wil take precedence */
+/* generic styles should be at the top of file, more specific styles like in media query should be present downwards towards bottom of file
+as css reads from top to bottom and then apply the styling. */

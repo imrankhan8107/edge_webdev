@@ -1,0 +1,10 @@
+$red: red;
+// use vs code extension live sass compiler to compile scss to css
+
+body {
+  background: $red;
+}
+
+.header {
+  color: cyan;
+}
