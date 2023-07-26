@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import {
   LineChart,
   Line,
@@ -7,35 +7,13 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import { weatherContext } from "../App";
 
 export default function ForecastChart() {
-  const [data, setdata] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=4631ef4177fb13d78b2dc0b0c1650420&units=metric"
-      );
-      const json = await response.json();
-      const weatherData = json.list;
-
-      var tempData = [];
-
-      weatherData.map((item) => {
-        tempData.push({
-          date: item.dt_txt,
-          temperature: item.main.temp,
-        });
-
-        return tempData;
-      });
-
-      setdata(tempData);
-    };
-    fetchData();
-  }, []);
+  const { forecastData } = useContext(weatherContext);
 
   return (
-    <LineChart width={950} height={400} data={data} className="chart">
+    <LineChart width={950} height={400} data={forecastData} className="chart">
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" />
       <YAxis dataKey="temperature" />

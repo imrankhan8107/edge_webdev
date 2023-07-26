@@ -24,6 +24,7 @@ function App() {
   const [longitude, setlongitude] = useState(-0.118092);
   const [weatherData, setweatherData] = useState({});
   const [cityName, setCityName] = useState("Mumbai");
+  const [forecastData, setforecastData] = useState(null);
 
   const getWeatherData = async (url) => {
     const response = await fetch(url);
@@ -59,10 +60,32 @@ function App() {
     }
   );
 
+  const fetchData = async (url) => {
+    const response = await fetch(url);
+    const json = await response.json();
+    const weatherData = json.list;
+
+    var tempData = [];
+
+    weatherData.map((item) => {
+      tempData.push({
+        date: item.dt_txt,
+        temperature: item.main.temp,
+      });
+
+      return tempData;
+    });
+
+    setforecastData(tempData);
+  };
+
   useEffect(() => {
     getWeatherData(
       API_BASE_URL +
         `lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+    );
+    fetchData(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
     );
   }, [latitude, longitude]);
 
@@ -89,6 +112,7 @@ function App() {
           setCityName: setCityName,
           getCityData: getCityData,
           locateMe: locateMe,
+          forecastData:forecastData,
         }}
       >
         <Router>
