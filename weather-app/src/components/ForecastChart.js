@@ -35,7 +35,7 @@ export default function ForecastChart() {
   }, []);
 
   return (
-    <LineChart width={800} height={350} data={data}>
+    <LineChart width={950} height={400} data={data} className="chart">
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" />
       <YAxis dataKey="temperature" />

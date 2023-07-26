@@ -7,14 +7,19 @@
   overflow: scroll;
 }
 
+.middle-pane__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
 .card {
   margin: 0.5rem;
-  margin-left: 2.5rem;
   padding: 0.2rem;
   background-color: whitesmoke;
   display: inline-block;
   border-radius: 1rem;
-  width: 40%;
+  width: 80%;
 }
 
 .card .icon {
@@ -41,7 +46,6 @@ h4 {
   display: inline-block;
 }
 
-.graph {
-  height: 500px;
-  width: 100%;
+.chart {
+  margin-top: 1rem;
 }
