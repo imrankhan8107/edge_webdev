@@ -29,12 +29,12 @@ function checkForKey(req, res, next) {
   }
 }
 
-// // decodeQuery happens then the function call happens
+// decodeQuery happens then the function call happens
 // app.get("/public", decodeQuery, (req, res) => {
 //   res.send("Hello " + req.query.name);
 // });
 
-// // decodeQuery happens then checkForKey happens then function call happens
+// decodeQuery happens then checkForKey happens then function call happens
 // app.get("/private", decodeQuery, checkForKey, (req, res) => {
 //   res.send("Hello " + req.query.name + ", welcome to the sea");
 // });

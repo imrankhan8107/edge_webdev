@@ -21,6 +21,7 @@ import postReducer from "./posts";
 // to access, state.cartReducer.isOpen in case of multiple reducers
 
 // const store = createStore(cartReducer);
+
 const store = configureStore(
   {
     reducer: {
